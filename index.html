@@ -1,7 +1,450 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+	<head>
+		<title>Vishal Tien's Website</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-lightbulb"></span>
+							<!-- <span class="headshot icon"><img src="images/headshot.jpg" alt="" /></span> -->
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Vishal Tien</h1>
+								<p>Machine Learning x Engineering</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#about">About</a></li>                
+								<li><a href="#pastprojects">Past Projects</a></li>
+                				<li><a href="#ongoingprojects">Ongoing Projects</a></li>
+								<li><a href="#contact">Contact</a></li>
+                				<li><a href="resume.html">Resume</a></li>
+								<!-- <li><a href="#elements">Elements</a></li> -->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- About -->
+							<article id="about">
+							<h2 class="major">About</h2>
+							<span class="image main"><img src="images/headshot.jpg" alt="" /></span>
+							<p>Hi! Thanks for visiting my personal website. Here, you can find an assortment of my past projects, as well as a taste of what I'm up to and interested in today.</p>
+							<p>A little bit about me: I'm a ML Engineer with 2 years of experience in machine learning spanning both research and industry, specializing in natural language processing and with domain expertise in the pharma / healthcare industry.
+							I graduated from the University of Pennsylvania with a bachelors degree in Bioengineering and a master's degree in Systems Engineering with a focus in data science.
+							I am most passionate about NLP, logical / neuro-symbolic AI, and knowledge graphs. Outside of work, I'm a lover of soccer, music, and traveling and am currently located in New York City.</p>
+							</article>
+
+						<!-- Past Projects -->
+							<article id="pastprojects">
+								<h2 class="major">Past Projects</h2>
+								<p>Below are projects I have built outside of work. To see the projects I have worked on in industry, please see my <a href="resume.html">resume</a></p>
+								<h3>Table of Contents</h3>
+								<div class="table-wrapper">
+									<table class="alt">
+										<thead>
+											<tr>
+												<th>Project Category</th>
+												<th>Project Name</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Natural Language Processing</td>
+												<td><a href="#summarization_paper"> An Evaluation of Abstractive and Extractive Deep Learning NLP Text Summarization Techniques</a></td>
+											</tr>
+											<tr>
+												<td>Natural Language Processing</td>
+												<td><a href="#chatbot"> Conversational Chatbot using Deep Learning</a></td>
+											</tr>											
+											<tr>
+												<td>Deep Learning</td>
+												<td><a href="#neural_network_from_scratch"> Neural Network from Scratch</a></td>
+											</tr>
+											<tr>
+												<td>Computer Vision</td>
+												<td><a href="#vae"> Image Generation & Reconstruction with Variational Autoencoder</a></td>
+											</tr>											
+											<tr>
+												<td>ML + Healthcare</td>
+												<td><a href="#inpatient_los"> Predicting Inpatient Length of Stay at Hospitals</a></td>
+											</tr>
+											<tr>
+												<td>ML + Healthcare</td>
+												<td><a href="#bmi"> Machine Learning for Brain-Machine Interfaces</a></td>
+											</tr>		
+											<tr>
+												<td>ML + Healthcare</td>
+												<td><a href="#schisto"> Point-of-care Diagnostic Smartphone App for Schistosomiasis Disease using Computer Vision + Microfluidics</a></td>
+											</tr>																				
+											<tr>
+												<td>App Development</td>
+												<td><a href="#nyc_restaurant_finder"> NYC Restaurant Finder Web Application</a></td>
+											</tr>											
+										</tbody>
+									</table>
+								</div>								
+								<br>
+								<h3><a id="summarization_paper" href="https://drive.google.com/file/d/1b8dDyna6WqcvsP5vZSWB8HFVMCHtxbBJ/view?usp=sharing">An Evaluation of Abstractive and Extractive Deep Learning NLP Text Summarization Techniques using Question Answering</a></h3>
+								<span class="image main"><img src="images/text-summarization.jpg" alt="" /></span>
+								<p>Wrote a research paper on a topic of choice for a graduate-level deep learning course at the University of Pennsylvania. Main contributions included implementing beam search decoder as an improvement to Bahdanau's attention-based neural machine translation model fine-tuned on a CNN news articles dataset, as well as introducing a question-answering evaluation mechanism to evaluate and benchmark performance</p>
+								
+								<h3><a id="chatbot" href="https://github.com/vtien/Deep-Learning-ChatBot">Conversational Chatbot using Deep Learning</a></h3>
+								<span class="image main"><img src="images/chatbot.png" alt="" /></span>
+								<p>Trained a custom conversational chatbot using TensorFlow and deployed to a web application using Flask. Can be taught to converse about any subject through a simple json file (for example, can currently be asked to retrieve the current Premier League soccer standings).</p>
+
+								<h3><a id="neural_network_from_scratch" href="https://github.com/vtien/Neural_Network_From_Scratch">Implementing a Neural Network From Scratch</a></h3>
+								<span class="image main"><img src="https://miro.medium.com/proxy/1*dmoRN3Wh7xyDQ1bDQcnToA.gif" alt="neural network gif" /></span>
+								<p>Created and trained a neural network from scratch, including manual computation and caching of values from forward process for use in backpropagation to speed up training, using only pure python and numpy. Compared performance to a PyTorch network</p>
+								
+								<h3><a id="inpatient_los" href="https://towardsdatascience.com/predicting-inpatient-length-of-stay-at-hospitals-using-python-big-data-304e79d8c008">Predicting Inpatient Length of Stay at Hospitals</a></h3>
+								<span class="image main"><img src="images/Inpatient-LOS-blog.jpg" alt="" /></span>
+								<p>Utilized > 2 million rows of patient data to uncover clinically relevant insights and predict patient length of stay using only data present at time of patient admittance. Makes progress towards improving hospital management efficiency</p>	
+								
+								<h3><a id="vae" href="https://github.com/vtien/Variational-Autoencoder">Image Reconstruction and Generation with Variational Autoencoder</a></h3>
+								<span class="image main"><img src="images/vae.png" alt="" /></span>
+								<p>Implemented a variational autoencoder from scratch in the PyTorch library applied to the problem of reconstructing and generating images from MNIST dataset</p>												
+							
+								<h3><a id="bmi" href="https://github.com/vtien/BE521-Final-Project">Machine Learning for Brain-Machine Interfaces</a></h3>
+								<span class="image main"><img src="images/bmi.png" alt="" /></span>
+								<p>Final project for graduate-level class BE 521: Brain-Computer Interface, where the task was to predict which fingers of a patient were being raised solely from electroencephalogram (EEG) waveform data, with applications to remote 
+									neural prosthetic control (for individuals with severe motor disabilities, for example). </p>	
+
+								<h3><a id="schisto" href="https://drive.google.com/file/d/19KV4SGZNSeB0eqOXrfzCfBS_6Aym3aSy/view">Point-of-care Diagnostic Smartphone App for Schistosomiasis Disease using Computer Vision + Microfluidics</a></h3>
+								<span class="image main"><img src="images/schisto.png" alt="" /></span>
+								<p>Manufactured a low-cost point-of-care diagnostic device powered by a mobile application as part of my team's <a href="https://beblog.seas.upenn.edu/2020-awards-season-for-bioengineering-students/">award-winning</a> 
+									senior design project that aimed to reduce the impact and infection of a parasitic disease present in developing countries that are particularly burdened by limited access to healthcare. The Pioneer Award is given to the team that's product best addresses 
+									an unmet need as part of the Rothberg Catalyzer event, which is organized with the intent of inspiring the next generation of healthcare innovators</p>							
+							
+								<h3><a id="nyc_restaurant_finder" href="https://github.com/arstern/CIS550_FinalProject">NYC Restaurant Finder Web Application</a></h3>
+								<iframe src="https://giphy.com/embed/tqjL39sqDywH1BCceH" width="600" height="600" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+								<p>Developed full-stack React / Node.js web application with Express.js backend connected to a SQL database providing advanced restaurant search capabilities. Click <a href="https://drive.google.com/file/d/1LCW9_zy8plAvDnzh1tPNb6HO8EA9-CzC/view">here</a> for full video demo</p>
+
+								</article>
+
+             			 <!-- Ongoing Projects -->
+							<article id="ongoingprojects">
+								<h2 class="major">Ongoing Projects</h2>
+								<!-- <span class="image main"><img src="images/ongoing-projects.png" alt="" /></span> -->
+								
+								<h3><a href="https://github.com/vtien/tien-trading-bot">Trading Bot</a></h3>
+								<span class="image main"><img src="images/tradingbot.png" alt="" /></span>
+								<p>An exploration into real time data streaming, threading for concurrency, object oriented programming, and 
+									algorithmic trading (genetic algorithms, machine learning, and more) in a custom trading bot</p>
+								
+								<h3>Music Social Media Application with Spotify API</h3>
+								<span class="image main"><img src="images/spotify.png" alt="" /></span>
+								<p>Creating a social media application centered around music. React for frontend and Java SpringBoot backend</p>
+							</article>  							
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+								<form method="POST" action="https://formsubmit.co/73dcf9ca201264277f1647c4dc9ac654">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" required/>
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4" required></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<li><a href="https://github.com/vtien/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.linkedin.com/in/vishal-tien-116853128/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+							</article>
+
+						<!-- Elements -->
+							<article id="elements">
+								<h2 class="major">Elements</h2>
+
+								<section>
+									<h3 class="major">Text</h3>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+									<hr />
+									<h2>Heading Level 2</h2>
+									<h3>Heading Level 3</h3>
+									<h4>Heading Level 4</h4>
+									<h5>Heading Level 5</h5>
+									<h6>Heading Level 6</h6>
+									<hr />
+									<h4>Blockquote</h4>
+									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+									<h4>Preformatted</h4>
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</section>
+
+								<section>
+									<h3 class="major">Lists</h3>
+
+									<h4>Unordered</h4>
+									<ul>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Alternate</h4>
+									<ul class="alt">
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Ordered</h4>
+									<ol>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis viverra.</li>
+										<li>Felis enim feugiat.</li>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis lorem.</li>
+										<li>Felis enim et feugiat.</li>
+									</ol>
+									<h4>Icons</h4>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									</ul>
+
+									<h4>Actions</h4>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Table</h3>
+									<h4>Default</h4>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+									<h4>Alternate</h4>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</section>
+
+								<section>
+									<h3 class="major">Buttons</h3>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Primary</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button">Default</a></li>
+										<li><a href="#" class="button small">Small</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+									</ul>
+									<ul class="actions">
+										<li><span class="button primary disabled">Disabled</span></li>
+										<li><span class="button disabled">Disabled</span></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Form</h3>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="demo-name">Name</label>
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+											</div>
+											<div class="field half">
+												<label for="demo-email">Email</label>
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
+											</div>
+											<div class="field">
+												<label for="demo-category">Category</label>
+												<select name="demo-category" id="demo-category">
+													<option value="">-</option>
+													<option value="1">Manufacturing</option>
+													<option value="1">Shipping</option>
+													<option value="1">Administration</option>
+													<option value="1">Human Resources</option>
+												</select>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+												<label for="demo-priority-low">Low</label>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-high" name="demo-priority">
+												<label for="demo-priority-high">High</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>
+											<div class="field">
+												<label for="demo-message">Message</label>
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<!-- <p class="copyright">&copy; Vishal Tien</p> -->
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
