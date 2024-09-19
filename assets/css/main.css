@@ -643,6 +643,13 @@ input, select, textarea {
 		display: inline-block;
 		position: relative;
 	}
+	.project-image {
+	    width: 100%; 
+	    height: auto;
+	    max-width: 400px;
+	    display: block;
+	    margin: 0 auto;
+	}
 
 		.image:before {
 			pointer-events: none;
