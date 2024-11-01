@@ -1651,7 +1651,7 @@ input, select, textarea {
   opacity: 0;
   transition: opacity 0.3s;
   white-space: normal;
-  max-width: 300px; /* Adjust to fit your needs */
+  max-width: 600px; /* Adjust to fit your needs */
 }
 
 .tooltip:hover .tooltiptext {
