@@ -1644,20 +1644,20 @@ input, select, textarea {
   padding: 5px;
   position: absolute;
   z-index: 1;
-  bottom: 125%;
+  top: 120%; /* Adjust position relative to the link */
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s;
-  white-space: normal; /* Allows wrapping to new lines */
-  max-width: 300px; /* Optional: limits tooltip width */
+  white-space: normal;
+  max-width: 300px;
 }
-
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
 }
+
 
 
 /* Footer */
