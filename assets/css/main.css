@@ -1646,7 +1646,7 @@ input, select, textarea {
   opacity: 0;
   transition: opacity 0.3s;
   white-space: normal;
-  min-width: 200px;
+  min-width: 300px;
   max-width: 600px; 
 }
 
