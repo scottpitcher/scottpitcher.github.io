@@ -1645,19 +1645,20 @@ input, select, textarea {
   padding: 5px;
   position: absolute;
   z-index: 1;
-  top: 120%; /* Adjust position relative to the link */
+  top: 130%; /* Position below the text */
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s;
   white-space: normal;
-  max-width: 300px;
+  max-width: 300px; /* Adjust to fit your needs */
 }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
 }
+
 
 
 
