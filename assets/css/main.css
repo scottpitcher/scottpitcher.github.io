@@ -1656,20 +1656,18 @@ input, select, textarea {
 }
 
 .code-block {
-    text-align: left;          
-    display: block;            
     background-color: #2e2e2e;
     color: #f8f8f2;
     padding: 15px;
     border-radius: 5px;
-    overflow-x: auto;         
+    overflow-x: auto;         /* Enables horizontal scrolling */
     font-family: monospace;
     font-size: 14px;
-    width: 100%;               /* Ensures the code block takes up the full width of the container */
-    min-height: 150px;         /* Sets a minimum height to fill vertically if there’s little code */
-    min-width: 80vw;           /* Ensures it fills at least 80% of the viewport width */
-    max-width: 100%;           /* Prevents it from overflowing the container width */
-    margin: 15px auto;
+    width: 70%;               /* Sets it to take up to 70% of the container's width */
+    max-width: 800px;         /* Limits the maximum width to 800px */
+    margin: 15px auto;        /* Centers the block horizontally */
+    min-height: 150px;        /* Sets a minimum height */
+    text-align: left;         /* Left-aligns text within the code block */
 }
 
 
