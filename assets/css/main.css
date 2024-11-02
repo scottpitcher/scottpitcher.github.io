@@ -1655,7 +1655,20 @@ input, select, textarea {
   opacity: 1;
 }
 
-
+.code-block {
+    text-align: left;        /* Left-aligns the text within the code block */
+    display: inline-block;   /* Centers the code block within the container */
+    background-color: #2e2e2e;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;        /* Enables horizontal scrolling */
+    font-family: monospace;
+    font-size: 14px;
+    width: fit-content;      /* Adjusts width to the content */
+    max-width: 100%;         /* Ensures it doesn’t exceed the container width */
+    margin: 15px auto;       /* Centers the code block itself within the page */
+}
 
 
 /* Footer */
