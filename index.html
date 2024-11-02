@@ -175,10 +175,10 @@
 						<!--Pokemon Project -->
 							<article id="pokemonaipage">
 								<h2 class="major">Pokémon Platinum AI Project</h2>
-								<div style="text-align: center; font-size: 12px;"><p>Actual model gameplay!</p></div>
+								<div style="text-align: center;"><p>Actual model gameplay!</p></div>
 								<h3>Project Summary</h3>
 								<p>PyTorch based reinforcement learning model aimed at learning to play specified actions in an open-world video-game (Pokémon Platinum) with the assistance of a computer vision model.<p>
-								<p>Check out the full GitHub repository <a href="https://github.com/scottpitcher/PokemonPlatinum.AI">here!</a></p>
+								<p>Check out the GitHub repository <a href="https://github.com/scottpitcher/PokemonPlatinum.AI">here!</a></p>
 								<h3>Project Overview</h3>
 								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_1"> 1. Computer Vision Model </a></p>
     								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_2"> 2. Model Building and Hyperparameter Tuning </a></p>
@@ -189,13 +189,24 @@
 								<body><hr width="100%" size="2"> </body>
 								<h3 id = #pokemonaipage_1>Computer Vision Model</h3>
 									<pre class="code-block"><code class="language-python">
-# Example Python code block
-import torch
-import torchvision.transforms as transforms
+model = YOLO("yolov9s.pt")
 
-# Initialize the model
-model = Model()
-model.train()
+model.train(
+    data = dataset_path,
+    epochs = 60,
+    patience =12,
+    imgsz= 640,
+    device='cpu',
+    batch= 8,
+    amp = True,
+    workers = num_workers,
+    val = True,
+    plots = True,
+    name = "firstRun",
+    exist_ok = True,
+)
+print("Starting TensorBoard...")
+os.system(f"tensorboard --logdir models/annotation_runs/")
 									</code></pre>
 								<p
 
