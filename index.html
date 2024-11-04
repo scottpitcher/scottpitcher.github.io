@@ -208,7 +208,59 @@
 								<h3 id="pokemonaipage_3_2">3.2 Model Building and Hyperparameter Tuning</h3>
 								<p></p>
 								<h5> Gameplay Model Architecture</h5>
-								<pre class="code-block"><code class="language-python"> </code></pre>
+								<pre class="code-block"><code class="language-python">class PokemonModelLSTM(nn.Module):
+    def __init__(self, input_size, conv1_dim, conv2_dim, hidden_size, num_layers, num_actions, use_annotations=False):
+        super(PokemonModelLSTM, self).__init__()
+
+        # Store hyperparameters as attributes for easy access
+        self.input_size = input_size
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.num_actions = num_actions
+        self.use_annotations = use_annotations
+        
+        # Convolutional layers to extract features from the game state
+        self.conv1 = nn.Conv2d(3, conv1_dim, kernel_size=3, stride=2, padding=1)
+        self.conv2 = nn.Conv2d(conv1_dim, conv2_dim, kernel_size=3, stride=2, padding=1)
+        
+        # LSTM to capture temporal dependencies; input_size will be adjusted dynamically in forward pass
+        self.lstm = nn.LSTM(input_size=input_size, hidden_size=hidden_size, num_layers=num_layers, batch_first=True)
+        
+        # Fully connected layer to map the LSTM output to the number of actions
+        self.fc = nn.Linear(hidden_size, num_actions)
+    
+    def forward(self, x, annotations=None):
+        # Input x is expected to be of shape (batch_size, seq_len, C, H, W)
+        batch_size, seq_len, C, H, W = x.size()
+        
+        # Reshape input for convolutional layers
+        x = x.view(batch_size * seq_len, C, H, W)
+        
+        # Apply convolutional layers with ReLU activations
+        x = F.relu(self.conv1(x))
+        x = F.relu(self.conv2(x))
+        
+        # Flatten the output for the LSTM layer
+        x = x.view(batch_size, seq_len, -1)  # Shape: (batch_size, seq_len, conv2_dim * H' * W')
+        
+        # Dynamically adjust LSTM input size if using annotations
+        if self.use_annotations and annotations is not None:
+            annotations = annotations.view(batch_size, seq_len, -1)  # Reshape annotations to (batch_size, seq_len, annotation_features)
+            x = torch.cat((x, annotations), dim=-1)  # Concatenate along the feature dimension
+            lstm_input_size = x.size(-1)  # Set the LSTM input size based on the concatenated features
+            
+            # Reinitialize LSTM if needed to match new input size
+            if lstm_input_size != self.lstm.input_size:
+                self.lstm = nn.LSTM(input_size=lstm_input_size, hidden_size=self.hidden_size, num_layers=self.num_layers, batch_first=True)
+
+        # Apply LSTM
+        x, _ = self.lstm(x)                  # x: (batch_size, seq_len, hidden_size)
+        
+        # Fully connected layer: map the LSTM output to the action space
+        x = self.fc(x[:, -1, :])             # Use the last time step's output
+        
+        return x
+</code></pre>
 
 								<h5>Chosen Model Hyperparameters</h5>
 									<p style="margin-bottom: 5px;">num_layers = </p>
