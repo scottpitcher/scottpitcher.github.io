@@ -180,38 +180,57 @@
 								<p>PyTorch based reinforcement learning model aimed at learning to play specified actions in an open-world video-game (Pokémon Platinum) with the assistance of a computer vision model.<p>
 								<p>Check out the GitHub repository <a href="https://github.com/scottpitcher/PokemonPlatinum.AI">here!</a></p>
 								<h3>Project Overview</h3>
-								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_1"> 1. Computer Vision Model </a></p>
-    								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_2"> 2. Model Building and Hyperparameter Tuning </a></p>
- 							        <p style="margin-bottom: 5px;"><a href="#pokemonaipage_3"> 3. Model Pretraining and Reinforcement Learning Training</a></p>
-    								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_4"> 4. Overall Results</a></p>
-    
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_1"> 1. Introduction </a></p>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_2"> 2. Dataset and Preprocessing </a></p>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_3"> 3. Project Structure </a></p>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_4"> 4. Challenges and Solutions </a></p>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_5"> 5. Technical Stack </a></p>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_6"> 6. Results </a></p>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_7"> 7. Future Improvements </a></p>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_8"> 8. Conclusion </a></p>
+								<hr width="100%" size="2">
+
+								<h3 id="pokemonaipage_1">Introduction</h3>
+								<p></p>
 								
-								<body><hr width="100%" size="2"> </body>
-								<h3 id = pokemonaipage_1>Computer Vision Model</h3>
-									<pre class="code-block"><code class="language-python">
-model = YOLO("yolov9s.pt")
-
-model.train(
-    data = dataset_path,
-    epochs = 60,
-    patience =12,
-    imgsz= 640,
-    device='cpu',
-    batch= 8,
-    amp = True,
-    workers = num_workers,
-    val = True,
-    plots = True,
-    name = "firstRun",
-    exist_ok = True,
-)
-print("Starting TensorBoard...")
-os.system(f"tensorboard --logdir models/annotation_runs/")
-									</code></pre>
-
-								<h3 id = pokemonaipage_2> Model Building and Hyperparameter Tuning</h3>
-								<h3 id = pokemonaipage_3>Model Pretraining and Reinforcement Learning Training</h3>
-								<h3 id = pokemonaipage_4>Overall Results</h3>
+								<h3 id="pokemonaipage_2">Dataset and Preprocessing</h3>
+								<p></p>
+								
+								<h3 id="pokemonaipage_3">Project Structure</h3>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_3_1">3.1 Computer Vision Model</a></p>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_3_2">3.2 Model Building and Hyperparameter Tuning</a></p>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_3_3">3.3 Model Pretraining and Reinforcement Learning Training</a></p>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_3_4">3.4 Evaluation</a></p>
+								
+								<h4 id="pokemonaipage_3_1">3.1 Computer Vision Model</h4>
+								<p></p>
+								
+								<h4 id="pokemonaipage_3_2">3.2 Model Building and Hyperparameter Tuning</h4>
+								<p></p>
+								<h5>Gameplay Model Architecture</h5>
+								<pre class="code-block"><code class="language-python"> </code></pre>
+								
+																
+								<h4 id="pokemonaipage_3_3">3.3 Model Pretraining and Reinforcement Learning Training</h4>
+								<p></p>
+								
+								<h4 id="pokemonaipage_3_4">3.4 Evaluation</h4>
+								<p></p>
+								
+								<h3 id="pokemonaipage_4">Challenges and Solutions</h3>
+								<p></p>
+								
+								<h3 id="pokemonaipage_5">Technical Stack</h3>
+								<p></p>
+								
+								<h3 id="pokemonaipage_6">Results</h3>
+								<p></p>
+								
+								<h3 id="pokemonaipage_7">Future Improvements</h3>
+								<p></p>
+								
+								<h3 id="pokemonaipage_8">Conclusion</h3>
+								<p></p>
 								
 								
 
