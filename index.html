@@ -205,9 +205,9 @@
 								<p>The project consists of two main models: an annotation model fine-tuned from YOLOv9s for object detection, and a gameplay model built and trained from scratch with RLHF to make strategic decisions within the game environment.</p>
 								<h2 id="pokemonaipage_2">2. Dataset and Preprocessing</h2>
 								<span class="image main">
-								    <img class="project-image" src="images/projects/pokemonplatinumai/datasetpreprocessing.jpeg" alt="" style="display: block; margin: auto;" />
+								    <img class="project-image" src="images/projects/pokemonplatinumai/datasetpreprocessing.jpeg" alt="" style="display: block; margin: auto; width: 80%; max-width: 800px;" />
 								</span>
-								<div style="text-align: center;"><p>Dataset preprocessing workflow</p></div>
+								<div style="text-align: center; margin-top: -5px;"><p>Dataset preprocessing workflow</p></div>
 								<p>To develop the computer vision annotation model, I manually annotated over 150 gameplay images, labeling key objects such as Pokémon, items, NPCs, and locations. Data augmentations, including random rotation, color jittering, and contrast adjustments, along with resizing transformations, were applied to enhance the model's robustness and generalization.</p>
 								<p>Once the annotation model was trained, it was used to automatically annotate an additional 450 gameplay states. Each state was paired with a set of possible actions (in JSON format)[automated in action_prep.py script] based on nine potential options: A, B, X, Y, Up, Down, Left, Right, and None.</p>
 								<p>These annotated state-action pairs were then used to pretrain the gameplay model, preparing it for the main reinforcement learning phase.</p>
