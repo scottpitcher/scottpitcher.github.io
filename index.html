@@ -205,7 +205,7 @@
 								<p>The project consists of two main models: an annotation model fine-tuned from YOLOv9s for object detection, and a gameplay model built and trained from scratch with RLHF to make strategic decisions within the game environment.</p>
 								<h3>Technical Stack</h3>
 								<span class="image main">
-								    <img class="project-image" src="images/projects/pokemonplatinumai/TechnicalStack.jpeg" alt="" style="display: block; margin: auto; width: 80%; max-width: 800px;" />
+								    <img class="project-image" src="images/projects/pokemonplatinumai/TechnicalStack.jpeg" alt="" style="display: block; margin: auto; width: 70%; max-width: 800px;" />
 								</span>
 								
 								<h2 id="pokemonaipage_2">2. Dataset and Preprocessing</h2>
@@ -218,8 +218,28 @@
 								<p style="margin-bottom: 15px;">These annotated state-action pairs were then used to pretrain the gameplay model, preparing it for the main reinforcement learning phase.</p>
 								
 								<h2 id="pokemonaipage_3">3. Project Structure</h2>
+								<p style="margin-bottom: 5px;">
+								    This project was divided into several key components to develop a robust AI model capable of navigating and interacting within the game environment. Each component played a critical role in building an effective and adaptive gameplay agent:
+								</p>
+								<p style="margin-bottom: 5px;">1. Development and training of a computer vision annotation model to identify key game elements.</p>
+								<p style="margin-bottom: 5px;">2. Construction of a PyTorch-based gameplay model with hyperparameter tuning for optimal performance.</p>
+								<p style="margin-bottom: 5px;">3. Pretraining of the gameplay model on annotated data, followed by reinforcement learning with human feedback to refine its interactions.</p>
+								<p style="margin-bottom: 10px;">4. Evaluation of the model's performance in achieving in-game objectives.</p>
+
 								<h3 id="pokemonaipage_3_1">3.1 Computer Vision Model</h3>
-								<p></p>
+								<p>The objective of the computer vision model was to accurately detect and classify key objects in the game environment, such as Pokémon, items, and NPCs. This was essential for enabling the gameplay model to understand its surroundings and make informed decisions based on in-game visuals.</p>
+								
+								<p><strong>Model Architecture</strong>: The model was built using <a href="https://github.com/ultralytics/yolov5">YOLOv9</a>, a state-of-the-art object detection framework, which provided a strong foundation for detecting various objects in the gameplay. The YOLOv9 architecture was fine-tuned on a custom dataset of gameplay images.</p>
+								
+								<p><strong>Dataset and Annotation</strong>: To train the annotation model, an initial dataset of 150 gameplay images was manually annotated. Key objects were labeled with bounding boxes, covering essential elements such as Pokémon, items, and NPCs. Data augmentation techniques, including random rotation, color jitter, and contrast adjustments, were applied to improve the model's robustness.</p>
+								
+								<p><strong>Training Process</strong>: The model was trained on the annotated dataset with multiple epochs to optimize for high object detection accuracy. Hyperparameters such as learning rate, batch size, and image size were tuned to enhance model performance. Once trained, the annotation model was used to automatically annotate an additional 450 images, significantly expanding the dataset with minimal manual effort.</p>
+								
+								<p><strong>Results</strong>: The computer vision model achieved a high detection accuracy across key in-game objects, providing reliable annotations for the gameplay model. The annotated states were then utilized as input data for pretraining the main gameplay model.</p>
+								<h4>Sample Annotation</h4>
+								<span class="image main">
+								    <img class="project-image" src="images/projects/pokemonplatinumai/sample_annotation0.jpeg" alt="" style="display: block; margin: auto; width: 80%; max-width: 800px;" />
+								</span>
 								
 								<h3 id="pokemonaipage_3_2">3.2 Model Building and Hyperparameter Tuning</h3>
 								<p></p>
