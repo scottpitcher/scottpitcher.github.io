@@ -226,16 +226,14 @@
 								<p style="margin-left: 20px; margin-bottom: 5px;">3. Pretraining of the gameplay model on annotated data, followed by reinforcement learning with human feedback to refine its interactions.</p>
 								<p style="margin-left: 20px; margin-bottom: 5px;">4. Evaluation of the model's performance in achieving in-game objectives.</p>
 
-								<h3 id="pokemonaipage_3_1">3.1 Computer Vision Model</h3>
-								<p style="margin-bottom: 10px;">The objective of the computer vision model was to accurately detect and classify key objects in the game environment, such as Pokémon, items, and NPCs. This was essential for enabling the gameplay model to understand its surroundings and make informed decisions based on in-game visuals.</p>
-								
-								<p style="margin-bottom: 10px;"><strong>Model Architecture</strong>: The model was built using <a href="https://github.com/ultralytics/yolov5">YOLOv9</a>, a state-of-the-art object detection framework, which provided a strong foundation for detecting various objects in the gameplay. The YOLOv9 architecture was fine-tuned on a custom dataset of gameplay images.</p>
-								
-								<p style="margin-bottom: 10px;"><strong>Dataset and Annotation</strong>: To train the annotation model, an initial dataset of 150 gameplay images was manually annotated. Key objects were labeled with bounding boxes, covering essential elements such as Pokémon, items, and NPCs. Data augmentation techniques, including random rotation, color jitter, and contrast adjustments, were applied to improve the model's robustness.</p>
-								
-								<p style="margin-bottom: 10px;"><strong>Training Process</strong>: The model was trained on the annotated dataset with multiple epochs to optimize for high object detection accuracy. Hyperparameters such as learning rate, batch size, and image size were tuned to enhance model performance. Once trained, the annotation model was used to automatically annotate an additional 450 images, significantly expanding the dataset with minimal manual effort.</p>
-								
-								<p style="margin-bottom: 5px;"><strong>Results</strong>: The computer vision model achieved a high detection accuracy across key in-game objects, providing reliable annotations for the gameplay model. The annotated states were then utilized as input data for pretraining the main gameplay model.</p>
+								<h3 id="pokemonaipage_3_1">3.1 COMPUTER VISION MODEL</h3>
+								<p>The computer vision model, based on YOLOv9, detects key objects like Pokémon, items, and NPCs to enable situational awareness for the gameplay model.</p>
+								<ul style="margin-left: 20px;">
+								    <li><strong>Architecture</strong>: YOLOv9, fine-tuned on a custom dataset of 150 annotated gameplay images.</li>
+								    <li><strong>Dataset & Augmentation</strong>: Key objects manually labeled, with data augmentation (rotation, color jitter) applied to improve robustness.</li>
+								    <li><strong>Training</strong>: Optimized hyperparameters for high detection accuracy. After training, the model auto-annotated 450 additional images.</li>
+								    <li><strong>Outcome</strong>: Achieved high accuracy, providing reliable annotations for the gameplay model's pretraining phase.</li>
+								</ul>
 								<h4>Sample Annotation</h4>
 								<span class="image main">
 								    <img class="project-image" src="images/projects/pokemonplatinumai/sample_annotation0.jpeg" alt="" style="display: block; margin: auto; width: 50%; max-width: 800px;" />
