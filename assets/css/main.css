@@ -1673,7 +1673,6 @@ input, select, textarea {
 details summary h2 {
   display: inline-block;
   cursor: pointer;
-  list-style: none; /* Removes the default arrow */
   margin-right: 5px;
 }
 
@@ -1684,6 +1683,15 @@ details summary h2::after {
   transition: transform 0.2s ease;
 }
 
+details summary {
+  list-style: none;      /* Removes default list styling */
+  appearance: none;      /* Removes default arrow in most browsers */
+  -webkit-appearance: none; /* Removes default arrow in WebKit browsers like Safari */
+}
+
+details summary::-webkit-details-marker {
+  display: none;         /* Hides the default arrow in Safari */
+}
 details[open] summary h2::after {
   transform: rotate(90deg); /* Down arrow when open */
 }
