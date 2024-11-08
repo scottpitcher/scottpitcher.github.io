@@ -1676,6 +1676,8 @@ details summary {
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
+  display: inline-flex; /* Ensures text and arrow are inline */
+  align-items: center; /* Centers the arrow vertically with text */
 }
 
 /* Remove default arrow in Safari */
@@ -1685,7 +1687,7 @@ details summary::-webkit-details-marker {
 
 /* Add dynamic arrow to all <summary> elements */
 details summary::after {
-  content: '▸'; /* Right-pointing arrow */
+  content: '▸';
   font-size: 1em;
   display: inline-block;
   margin-left: 5px;
@@ -1694,8 +1696,9 @@ details summary::after {
 
 /* Rotate arrow when <details> is open */
 details[open] summary::after {
-  transform: rotate(90deg); /* Downward arrow when open */
+  transform: rotate(90deg);
 }
+
 
 
 
