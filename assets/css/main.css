@@ -1693,7 +1693,6 @@ details summary::-webkit-details-marker {
 }
 
 
-
 details[open] summary h2::after {
   transform: rotate(90deg); /* Down arrow when open */
 }
