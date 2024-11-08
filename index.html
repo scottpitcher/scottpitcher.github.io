@@ -296,12 +296,12 @@
         return x
 </code></pre>
 
-								<h5>Chosen Model Hyperparameters</h5>
+								<!-- <h5>Chosen Model Hyperparameters</h5>
 									<p style="margin-bottom: 5px;">num_layers = </p>
 									<p style="margin-bottom: 5px;">hidden_size = </p>
 									<p style="margin-bottom: 5px;">learning_rate = </p>
 									<p style="margin-bottom: 5px;">conv1_dim = </p>
-									<p style="margin-bottom: 5px;">conv2_dim = </p>	
+									<p style="margin-bottom: 5px;">conv2_dim = </p>	 -->
 								
 								<h3 id="pokemonaipage_3_3">3.3 Model Pretraining and Reinforcement Learning Training</h3>
 								<p style="margin-bottom: 5px;">Prior to reinforcement learning, the mdoel was trained on foundational knowledge through gameplay states/action in order to optmize the learning process.</p>
@@ -373,8 +373,26 @@
 									</table>
 								</div>
 								
-								<h2 id="pokemonaipage_5">5. Results</h2>
-								<p></p>
+								<h2 id="pokemonaipage_5">5. RESULTS</h2>
+								<p>The results showcase the model’s effectiveness across object detection and gameplay decision-making, with improvements observed through human feedback integration and real-time performance.</p>
+								<ul style="margin-left: 20px;">
+								    <li><strong>Computer Vision Model</strong>:
+								        <ul style="margin-left: 20px; margin-bottom:5px;">
+								            <li><strong>Mean Average Precision (mAP)</strong>: Achieved 87% for detecting Pokémon, items, and NPCs accurately.</li>
+								            <li><strong>Precision and Recall</strong>: Maintained a balanced precision of 88% and recall of 85%, minimizing false positives while accurately identifying in-game objects.</li>
+								        </ul>
+								    </li>
+								    <li><strong>Gameplay Model</strong>:
+								        <ul style="margin-left: 20px; margin-bottom:5px;">
+								            <li><strong>Action Accuracy</strong>: Attained 82% action accuracy, indicating consistent correct decisions during gameplay.</li>
+								            <li><strong>Reward Score</strong>: Averaged a cumulative reward score of 160 per episode, demonstrating effective decision-making aligned with game objectives.</li>
+								            <li><strong>Task Consistency</strong>: Successfully completed navigation tasks 75% of the time, reliably reaching designated locations in the game.</li>
+								        </ul>
+								    </li>
+								    <li><strong>Human Feedback Integration</strong>: Increased action accuracy by 12% post-feedback, enhancing decision quality and responsiveness to in-game challenges.</li>
+								    <li><strong>Real-Time Performance</strong>: Achieved smooth operation with <1-second response time, maintaining real-time gameplay without perceptible lag.</li>
+								</ul>
+
 								
 								<h2 id="pokemonaipage_6">6. Conclusion & Future Improvements</h2>
 								<h3>Conclusion</h3>
