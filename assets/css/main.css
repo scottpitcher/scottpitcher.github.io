@@ -1670,6 +1670,24 @@ input, select, textarea {
     text-align: left;         /* Left-aligns text within the code block */
 }
 
+details summary h2 {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+details summary h2::after {
+  content: '▸'; /* Right arrow */
+  font-size: 1em;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+details[open] summary h2::after {
+  transform: rotate(90deg); /* Down arrow when open */
+}
+
+
 
 
 /* Footer */
