@@ -1670,20 +1670,18 @@ input, select, textarea {
     text-align: left;         /* Left-aligns text within the code block */
 }
 
-details summary {
+details summary h2 {
   display: inline-block;
   cursor: pointer;
   margin-right: 5px;
 }
 
-details summary::after {
-  content: '▸'; 
+details summary h2::after {
+  content: '▸'; /* Right arrow */
   font-size: 1em;
   display: inline-block;
   transition: transform 0.2s ease;
 }
-
-
 details summary {
   list-style: none;      /* Removes default list styling */
   appearance: none;      /* Removes default arrow in most browsers */
@@ -1695,7 +1693,8 @@ details summary::-webkit-details-marker {
 }
 
 
-details[open] summary ::after {
+
+details[open] summary h2::after {
   transform: rotate(90deg); /* Down arrow when open */
 }
 
