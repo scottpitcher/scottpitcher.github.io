@@ -216,11 +216,12 @@
 								  </span>
 								</details>
 
-								</details>
 
 
-								
-								<h2 id="pokemonaipage_2">2. Dataset and Preprocessing</h2>
+								<details>
+								  <summary>
+								    <h2 id="pokemonaipage_2">2. Dataset and Preprocessing</h2>
+								  </summary>
 								<span class="image main">
 								    <img class="project-image" src="images/projects/pokemonplatinumai/datasetpreprocessing.jpeg" alt="" style="display: block; margin: auto; width: 80%; max-width: 800px;" />
 								</span>
@@ -228,8 +229,12 @@
 								<p style="margin-bottom: 15px;">To develop the computer vision annotation model, I manually annotated over 150 gameplay images, labeling key objects such as Pokémon, items, NPCs, and locations. Data augmentations, including random rotation, color jittering, and contrast adjustments, along with resizing transformations, were applied to enhance the model's robustness and generalization.</p>
 								<p style="margin-bottom: 15px;">Once the annotation model was trained, it was used to automatically annotate an additional 450 gameplay states. Each state was paired with a set of possible actions (in JSON format)[automated in action_prep.py script] based on nine potential options: A, B, X, Y, Up, Down, Left, Right, and None.</p>
 								<p style="margin-bottom: 15px;">These annotated state-action pairs were then used to pretrain the gameplay model, preparing it for the main reinforcement learning phase.</p>
-								
-								<h2 id="pokemonaipage_3">3. Project Structure</h2>
+								</details>
+
+								<details>
+								  <summary>
+									<h2 id="pokemonaipage_3">3. Project Structure</h2>
+								  </summary>
 								<p style="margin-bottom: 12px;">
 								    This project was divided into several key components to develop a robust AI model capable of navigating and interacting within the game environment. Each component played a critical role in building an effective and adaptive gameplay agent:
 								</p>
@@ -344,8 +349,12 @@
 								    <li><strong>Real-Time Performance</strong>: Ensured that the model could perform efficiently within the game environment with minimal lag or delays.</li>
 								</ul>
 
-								
+								</details>
+
+								<details>
+								  <summary>
 								<h2 id="pokemonaipage_4">4. Challenges and Solutions</h2>
+								  </summary>
 								<div class="table-wrapper">
 									<table class="alt">
 										<thead>
@@ -384,8 +393,12 @@
 										</tbody>
 									</table>
 								</div>
-								
-								<h2 id="pokemonaipage_5">5. Results</h2>
+								</details>
+
+								<details>
+								  <summary>
+								  <h2 id="pokemonaipage_5">5. Results</h2>
+								  </summary>
 								<p>The results showcase the model’s effectiveness across object detection and gameplay decision-making, with improvements observed through human feedback integration and real-time performance.</p>
 								<ul style="margin-left: 20px;">
 								    <li><strong>Computer Vision Model</strong>:
@@ -416,9 +429,12 @@
 								    <li><strong>Human Feedback Integration</strong>: Increased action accuracy by 12% post-feedback, enhancing decision quality and responsiveness to in-game challenges.</li>
 								    <li><strong>Real-Time Performance</strong>: Achieved smooth operation with <1-second response time, maintaining real-time gameplay without perceptible lag.</li>
 								</ul>
+								</details>
 
-								
-								<h2 id="pokemonaipage_6">6. Conclusion & Future Improvements</h2>
+								<details>
+								  <summary>
+								  <h2 id="pokemonaipage_6">6. Conclusion & Future Improvements</h2>
+								  </summary>
 								<h3>Conclusion</h3>
 								<p style="margin-left: 10px; margin-bottom: 5px;">As a personal project, this project laid the foundation for the feasibility of using a combination of computer vision and reinforcement learning to create an AI model that can autonomously navigate and interact within a complex open-world game</p>
 								<p style="margin-left: 10px; margin-bottom: 5px;">With the incorporation of human feedback, the model's performance was refined, making it adaptable to real-time challenges.</p>
@@ -426,7 +442,7 @@
 								<p style="margin-left: 10px; margin-bottom: 5px;"><strong>Fine-Tune Reward Structure: </strong>: Enhance the reward system in the reinforcement learning model to incentivize more complex in-game strategies and behaviors. </p>
 								<p style="margin-left: 10px; margin-bottom: 5px;"><strong>Explore Multi-Agent Scenarios: </strong>: Develop the model to handle multi-agent environments or interactions with multiple NPCs for a richer gaming experience.</p>
 								<p style="margin-left: 10px; margin-bottom: 5px;"><strong>Enhance Model Memory: </strong>: Implement a memory module (e.g., extended LSTM or transformer-based) to track map, location, Pokémon status, and recent actions, enabling strategy based on game history.</p>
-								
+								</details>
 								
 
 								
