@@ -185,12 +185,12 @@ input, select, textarea {
 
 		h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
 		    border-bottom: solid 1px #ffffff;
-		    width: auto; /* Let the width adjust to the container */
+		    width: auto; /* Ensure the width adjusts to container size */
 		    padding-bottom: 0.5rem;
 		    margin: 0 0 2rem 0;
-		    word-wrap: break-word; /* For long words */
-		    text-align: center; /* Center align the text for better appearance */
+		    word-wrap: break-word; /* Allow breaking long words */
 		}
+
 
 
 	h1 {
