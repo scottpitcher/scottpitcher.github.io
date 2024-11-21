@@ -90,20 +90,27 @@
 											    <td>Computer Vision, Reinforcement Learning, Neural Networks</td>
 											    <td>Developing and training a DQN to play Pokémon Platinum through RLHF and Computer Vision</td>
 											</tr>
+											<tr>
+												<td><a href="#knowledgemoviepage"class="tooltip">E-commerce Marketing Analytics and Optimization
+													<span class="tooltiptext"> Click here for project results!</span>
+												</a></td>
+												<td>Predictive Analysis, Machine Learning, Marketing Analytics</td>
+												<td>Oprimised ROI and maximised CLV through the development of machine learning models and statistical analysis</td>
+											</tr>
 
+<!-- 											<tr>
+												<td><a href="#ecommercepage"class="tooltip">E-commerce Marketing Analytics and Optimization
+													<span class="tooltiptext"> Click here for project results!</span>
+												</a></td>
+												<td>Predictive Analysis, Machine Learning, Marketing Analytics</td>
+												<td>Oprimised ROI and maximised CLV through the development of machine learning models and statistical analysis</td>
+											</tr> -->
 											<tr>
 												<td><a href="#tampapage"class="tooltip">Tampa GPT
 											        	<span class="tooltiptext"> Click here for project results!</span>
 												</a></td>
 												<td>Large Language Models, Natural Language Processing, Fine-Tuning, Model Deployment</td>
 												<td>Fine-Tuning GPT 3.5 for knowledge on the Tampa Bay Region!</td>
-											</tr>
-											<tr>
-												<td><a href="#ecommercepage"class="tooltip">E-commerce Marketing Analytics and Optimization
-													<span class="tooltiptext"> Click here for project results!</span>
-												</a></td>
-												<td>Predictive Analysis, Machine Learning, Marketing Analytics</td>
-												<td>Oprimised ROI and maximised CLV through the development of machine learning models and statistical analysis</td>
 											</tr>
 											<tr>
 												<td><a href="#spotifypage"class="tooltip">Spotify Playlist Recommender/Customer Churn Model
@@ -122,7 +129,13 @@
 									<span class="image main"><img class="project-image" src="images/pokemon-platinumai-image.png" alt="" /></span>
 									<p>Training AI to carry out certain tasks in Pokémon Platinum, utilising computer vision and reinforcement learning (RLHF)!
 									<p><a href = #pokemonaipage >(Results/Report)</a> <a href = "https://www.github.com/scottpitcher/PokemonPlatinum.AI">       (GitHub Repo)</a></p>
-									
+
+									<!-- Knowledge Graph Movie Recommender -->
+									<h3><a id="knowledge" href = #knowledgemoviepage>Pokémon Platinum AI</a></h3>
+									<span class="image main"><img class="project-image" src="images/pokemon-platinumai-image.png" alt="" /></span>
+									<p>Training AI to carry out certain tasks in Pokémon Platinum, utilising computer vision and reinforcement learning (RLHF)!
+									<p><a href = #pokemonaipage >(Results/Report)</a> <a href = "https://www.github.com/scottpitcher/PokemonPlatinum.AI">       (GitHub Repo)</a></p>
+
 									<!-- Tampa GPT -->
 									<h3><a id="tampa" href=#tampapage>Tampa GPT</a></h3>
 									<span class="image main"><img class="project-image" src="images/chatgpt-logo.jpeg" alt="" /></span>
@@ -446,6 +459,284 @@
 								<p style="margin-left: 10px; margin-bottom: 5px;"><strong>Fine-Tune Reward Structure: </strong>: Enhance the reward system in the reinforcement learning model to incentivize more complex in-game strategies and behaviors. </p>
 								<p style="margin-left: 10px; margin-bottom: 5px;"><strong>Explore Multi-Agent Scenarios: </strong>: Develop the model to handle multi-agent environments or interactions with multiple NPCs for a richer gaming experience.</p>
 								<p style="margin-left: 10px; margin-bottom: 5px;"><strong>Enhance Model Memory: </strong>: Implement a memory module (e.g., extended LSTM or transformer-based) to track map, location, Pokémon status, and recent actions, enabling strategy based on game history.</p>
+								</details>
+								
+
+								
+							</article>
+						<!--Knowledge Graph Project -->
+							<article id="knowledgemoviepage">
+								<h1 class="major">Knowledge Graph Movie Recommender GNN </h1>
+								<div style="text-align: center;">
+ 								 <image controls style="width: 100%; max-width: 500px; height: 420px; object-fit: contain;">
+								    <source src="images/projects/knowldgegraphmovierec/graph.png" type="image/png">
+								  </image>
+								</div>
+
+								<div style="text-align: center;"><p>Movie data knowledge graph in Neo4j!</p></div>
+								<h2>Project Summary</h2>
+								<p><p>
+								<p>Check out the GitHub repository <a href="https://github.com/scottpitcher/movie-recommendation-network">here!</a></p>
+								<h2>Project Overview</h2>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_1"> 1. Introduction & Technical Stack</a></p>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_2"> 2. Dataset and Preprocessing </a></p>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_3"> 3. Project Structure </a></p> <details><summary style="font-size: 0.9em;"><p style="margin-bottom : 0px;">Subsections</p></summary>
+								    <p style="margin-left: 20px; font-size: 0.9em; margin-bottom: 3px;"><a href="#pokemonaipage_3_1">3.1 Computer Vision Model</a></p>
+								    <p style="margin-left: 20px; font-size: 0.9em;margin-bottom: 3px;"><a href="#pokemonaipage_3_2">3.2 Model Building and Hyperparameter Tuning</a></p>
+								    <p style="margin-left: 20px; font-size: 0.9em;margin-bottom: 3px;"><a href="#pokemonaipage_3_3">3.3 Model Pretraining and Reinforcement Learning Training</a></p>
+								    <p style="margin-left: 20px; font-size: 0.9em;margin-bottom: 3px;"><a href="#pokemonaipage_3_4">3.4 Evaluation</a></p>
+								</details>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_4"> 4. Challenges and Solutions </a></p>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_5"> 5. Results </a></p>
+								<p style="margin-bottom: 5px;"><a href="#pokemonaipage_6"> 6. Conclusion & Future Improvements </a></p>
+								<hr width="100%" size="2">
+								
+								<details>
+								  <summary>
+								    <h2 id="knowledgemoviepage_1">1. Introduction & Technical Stack</h2>
+								  </summary>
+								  <p style="margin-bottom: 15px;">
+								    In this project, I set out to build an AI system capable of playing Pokémon Platinum, an open-world, story-driven video game, using computer vision and reinforcement learning with human feedback (RLHF)!
+								  </p>
+								  <p>
+								    The project consists of two main models: an annotation model fine-tuned from YOLOv9s for object detection, and a gameplay model built and trained from scratch with RLHF to make strategic decisions within the game environment.
+								  </p>
+								  <h3>Technical Stack</h3>
+								  <span class="image main">
+								    <img class="project-image" src="images/projects/pokemonplatinumai/TechnicalStack.jpeg" alt="" style="display: block; margin: auto; width: 70%; max-width: 800px;" />
+								  </span>
+								</details>
+
+
+
+								<details>
+								  <summary>
+								    <h2 id="knowledgemoviepage_2">2. Dataset and Preprocessing</h2>
+								  </summary>
+								<span class="image main">
+								    <img class="project-image" src="images/projects/pokemonplatinumai/datasetpreprocessing.jpeg" alt="" style="display: block; margin: auto; width: 80%; max-width: 800px;" />
+								</span>
+								<div style="text-align: center; margin-top: -10px;"><p>Dataset preprocessing workflow</p></div>
+								<p style="margin-bottom: 15px;">To develop the computer vision annotation model, I manually annotated over 150 gameplay images, labeling key objects such as Pokémon, items, NPCs, and locations. Data augmentations, including random rotation, color jittering, and contrast adjustments, along with resizing transformations, were applied to enhance the model's robustness and generalization.</p>
+								<p style="margin-bottom: 15px;">Once the annotation model was trained, it was used to automatically annotate an additional 450 gameplay states. Each state was paired with a set of possible actions (in JSON format)[automated in action_prep.py script] based on nine potential options: A, B, X, Y, Up, Down, Left, Right, and None.</p>
+								<p style="margin-bottom: 15px;">These annotated state-action pairs were then used to pretrain the gameplay model, preparing it for the main reinforcement learning phase.</p>
+								</details>
+
+								<details>
+								  <summary>
+									<h2 id="knowledgemoviepage_3">3. Project Structure</h2>
+								  </summary>
+								<p style="margin-bottom: 12px;">
+								    This project was divided into several key components to develop a robust AI model capable of navigating and interacting within the game environment. Each component played a critical role in building an effective and adaptive gameplay agent:
+								</p>
+								<p style="margin-left: 20px; margin-bottom: 5px;">1. Development and training of a computer vision annotation model to identify key game elements.</p>
+								<p style="margin-left: 20px; margin-bottom: 5px;">2. Construction of a PyTorch-based gameplay model with hyperparameter tuning for optimal performance.</p>
+								<p style="margin-left: 20px; margin-bottom: 5px;">3. Pretraining of the gameplay model on annotated data, followed by reinforcement learning with human feedback to refine its interactions.</p>
+								<p style="margin-left: 20px; margin-bottom: 5px;">4. Evaluation of the model's performance in achieving in-game objectives.</p>
+
+								<h3 id="knowledgemoviepage_3_1">3.1 COMPUTER VISION MODEL</h3>
+								<p>The computer vision model, based on YOLOv9, detects key objects like Pokémon, items, and NPCs to enable situational awareness for the gameplay model.</p>
+								<ul style="margin-left: 20px;">
+								    <li><strong>Architecture</strong>: YOLOv9, fine-tuned on a custom dataset of 150 annotated gameplay images.</li>
+								    <li><strong>Dataset & Augmentation</strong>: Key objects manually labeled, with data augmentation (rotation, color jitter) applied to improve robustness.</li>
+								    <li><strong>Training</strong>: Optimized hyperparameters for high detection accuracy. After training, the model auto-annotated 450 additional images.</li>
+								    <li><strong>Outcome</strong>: Achieved high accuracy, providing reliable annotations for the gameplay model's pretraining phase.</li>
+								</ul>
+								<h4>Sample Annotation</h4>
+								<span class="image main">
+								    <img class="project-image" src="images/projects/pokemonplatinumai/sample_annotation0.jpeg" alt="" style="display: block; margin: auto; width: 50%; max-width: 800px;" />
+								</span>
+
+								<p>Computer vision model building script <a href="https://github.com/scottpitcher/PokemonPlatinum.AI/blob/main/annotation_model.ipynb">here!</a></p>
+								<h3 id="knowledgemoviepage_3_2">3.2 Model Building and Hyperparameter Tuning</h3>
+								<p></p>
+								<h5> Gameplay Model Architecture</h5>
+								<pre class="code-block" style="max-height: 400px; overflow-y: scroll;"><code class="language-python">class PokemonModelLSTM(nn.Module):
+    def __init__(self, input_size, conv1_dim, conv2_dim, hidden_size, num_layers, num_actions, use_annotations=False):
+        super(PokemonModelLSTM, self).__init__()
+
+        # Store hyperparameters as attributes for easy access
+        self.input_size = input_size
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.num_actions = num_actions
+        self.use_annotations = use_annotations
+        
+        # Convolutional layers to extract features from the game state
+        self.conv1 = nn.Conv2d(3, conv1_dim, kernel_size=3, stride=2, padding=1)
+        self.conv2 = nn.Conv2d(conv1_dim, conv2_dim, kernel_size=3, stride=2, padding=1)
+        
+        # LSTM to capture temporal dependencies; input_size will be adjusted dynamically in forward pass
+        self.lstm = nn.LSTM(input_size=input_size, hidden_size=hidden_size, num_layers=num_layers, batch_first=True)
+        
+        # Fully connected layer to map the LSTM output to the number of actions
+        self.fc = nn.Linear(hidden_size, num_actions)
+    
+    def forward(self, x, annotations=None):
+        # Input x is expected to be of shape (batch_size, seq_len, C, H, W)
+        batch_size, seq_len, C, H, W = x.size()
+        
+        # Reshape input for convolutional layers
+        x = x.view(batch_size * seq_len, C, H, W)
+        
+        # Apply convolutional layers with ReLU activations
+        x = F.relu(self.conv1(x))
+        x = F.relu(self.conv2(x))
+        
+        # Flatten the output for the LSTM layer
+        x = x.view(batch_size, seq_len, -1)  # Shape: (batch_size, seq_len, conv2_dim * H' * W')
+        
+        # Dynamically adjust LSTM input size if using annotations
+        if self.use_annotations and annotations is not None:
+            annotations = annotations.view(batch_size, seq_len, -1)  # Reshape annotations to (batch_size, seq_len, annotation_features)
+            x = torch.cat((x, annotations), dim=-1)  # Concatenate along the feature dimension
+            lstm_input_size = x.size(-1)  # Set the LSTM input size based on the concatenated features
+            
+            # Reinitialize LSTM if needed to match new input size
+            if lstm_input_size != self.lstm.input_size:
+                self.lstm = nn.LSTM(input_size=lstm_input_size, hidden_size=self.hidden_size, num_layers=self.num_layers, batch_first=True)
+
+        # Apply LSTM
+        x, _ = self.lstm(x)                  # x: (batch_size, seq_len, hidden_size)
+        
+        # Fully connected layer: map the LSTM output to the action space
+        x = self.fc(x[:, -1, :])             # Use the last time step's output
+        
+        return x
+</code></pre>
+
+								<!-- <h5>Chosen Model Hyperparameters</h5>
+									<p style="margin-bottom: 5px;">num_layers = </p>
+									<p style="margin-bottom: 5px;">hidden_size = </p>
+									<p style="margin-bottom: 5px;">learning_rate = </p>
+									<p style="margin-bottom: 5px;">conv1_dim = </p>
+									<p style="margin-bottom: 5px;">conv2_dim = </p>	 -->
+								
+								<h3 id="knowledgemoviepage_3_3">3.3 Model Pretraining and Reinforcement Learning Training</h3>
+								<p style="margin-bottom: 5px;">Prior to reinforcement learning, the mdoel was trained on foundational knowledge through gameplay states/action in order to optmize the learning process.</p>
+
+								<h4>Reinforcement Learning Training Loop</h4>
+								<span class="image main">
+								    <img class="project-image" src="images/projects/pokemonplatinumai/RLHF-diagram.jpeg" alt="" style="display: block; margin: auto; width: 70%; max-width: 800px;" />
+								</span>
+								<p style= "margin-top:-10px;">*Note that this is for exploitation, not exploration.</p>
+								
+								<h3 id="knowledgemoviepage_3_4">3.4 EVALUATION</h3>
+								<p>The evaluation phase focused on assessing the model's performance in object detection and gameplay decision-making accuracy.</p>
+								<ul style="margin-left: 20px;">
+								    <li><strong>Computer Vision Model Metrics</strong>:
+									<ul style="margin-left: 20px; margin-bottom:5px;">
+									    <li>Mean Average Precision (mAP): Used to measure detection accuracy for Pokémon, items, and NPCs.</li>
+									    <li>Precision and Recall: Evaluated to ensure a balance between correctly identifying objects and avoiding false positives.</li>
+									</ul>
+								    </li>
+								    <li><strong>Gameplay Model Metrics</strong>:
+									<ul style="margin-left: 20px; margin-bottom:5px;">
+									    <li>Accuracy of Actions: Percentage of correct actions taken by the model during gameplay.</li>
+									    <li>Reward Score: Cumulative reward achieved per episode to assess decision-making quality in achieving game objectives.</li>
+									    <li>Consistency: Frequency of successful task completions (e.g., navigating to specific locations).</li>
+									</ul>
+								    </li>
+								    <li><strong>Human Feedback Integration</strong>: Analyzed the model’s improvement in decision-making accuracy based on human feedback adjustments.</li>
+								    <li><strong>Real-Time Performance</strong>: Ensured that the model could perform efficiently within the game environment with minimal lag or delays.</li>
+								</ul>
+
+								<p>Model pretraining script <a href="https://github.com/scottpitcher/PokemonPlatinum.AI/blob/main/model_pretraining.ipynb">here!</a></p>
+								<p>Reinforcement learning scripts <a href="https://github.com/scottpitcher/PokemonPlatinum.AI/tree/main/RLHF_Scripts">here!</a></p>
+
+								</details>
+
+								<details>
+								  <summary>
+								<h2 id="knowledgemoviepage_4">4. Challenges and Solutions</h2>
+								  </summary>
+								<div class="table-wrapper">
+									<table class="alt">
+										<thead>
+											<tr>
+												<th>Challenge</th>
+												<th>Solution</th>
+												<th>Result</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+											    <td><strong>Limited Dataset for Training Computer Vision Model</strong></td>
+											    <td>Manually annotated a small set of images (150) and applied data augmentation techniques (rotation, color jitter, contrast adjustments).</td>
+											    <td>Achieved 70%+ accuracy on key object detection (Pokémon, NPCs), verified on test data with diverse augmentations.</td>
+											</tr>
+											<tr>
+											    <td><strong>Managing Memory for Contextual Gameplay</strong></td>
+											    <td>Implemented an extended LSTM module to retain game context (map location, Pokémon health, etc.).</td>
+											    <td>Improved task performance by 25% in complex scenarios requiring memory, such as revisiting NPCs or avoiding areas with low health.</td>
+											</tr>
+											<tr>
+											    <td><strong>Difficulty in Model Tuning for Real-Time Gameplay</strong></td>
+											    <td>Applied hyperparameter tuning and used human feedback to optimize the LSTM model's parameters.</td>
+											    <td>Reached 90% success in task completion (e.g., navigating to locations) across test runs.</td>
+											</tr>
+											<tr>
+											    <td><strong>Handling Diverse Game Scenarios</strong></td>
+											    <td>Used reinforcement learning with human feedback to train the model across varied scenarios.</td>
+											    <td>Enhanced model’s flexibility, achieving a 15% reduction in failed actions during unpredictable events or rare situations.</td>
+											</tr>
+											<tr>
+											    <td><strong>Action Space Complexity in Reinforcement Learning</strong></td>
+											    <td>Simplified the action space to directional and core commands (A, B, X, Y) for efficient learning.</td>
+											    <td>Reduced training time by 30%, with a 20% improvement in episode convergence rates.</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								</details>
+
+								<details>
+								  <summary>
+								  <h2 id="knowledgemoviepage_5">5. Results</h2>
+								  </summary>
+								<p>The results showcase the model’s effectiveness across object detection and gameplay decision-making, with improvements observed through human feedback integration and real-time performance.</p>
+								<ul style="margin-left: 20px;">
+								    <li><strong>Computer Vision Model</strong>:
+								        <ul style="margin-left: 20px; margin-bottom:5px;">
+								            <li><strong>Mean Average Precision (mAP)</strong>: Achieved 70.5% for detecting Pokémon, items, and NPCs accurately.</li>
+										<details>
+										  <summary><p style="margin-bottom: 5px;">Show graph</p></summary>
+										<span class="image main">
+										    <img class="project-image" src="images/projects/pokemonplatinumai/perclass_mAP.png" alt="" style="display: block; margin: auto; width: 70%; max-width: 800px;" />
+										  </span>
+										</details>
+								            <li><strong>Precision and Recall</strong>: The model achieved a balanced precision and recall of approximately 80%, effectively reducing false positives while accurately identifying in-game objects.</li>
+								       		<details>
+										  <summary><p style="margin-bottom : 0px;">Show graph</p></summary>
+										<span class="image main">
+										    <img class="project-image" src="images/projects/pokemonplatinumai/Pres-Rec-curve.png" alt="" style="display: block; margin: auto; width: 70%; max-width: 800px;" />
+										  </span>
+										</details>
+									</ul>
+								    </li>
+								    <li><strong>Gameplay Model</strong>:
+								        <ul style="margin-left: 20px; margin-bottom:5px;">
+								            <li><strong>Action Accuracy</strong>: Attained 82% action accuracy, indicating consistent correct decisions during gameplay.</li>
+								            <li><strong>Reward Score</strong>: Averaged a cumulative reward score of 160 per episode, demonstrating effective decision-making aligned with game objectives.</li>
+								            <li><strong>Task Consistency</strong>: Successfully completed navigation tasks 75% of the time, reliably reaching designated locations in the game.</li>
+								        </ul>
+								    </li>
+								    <li><strong>Human Feedback Integration</strong>: Increased action accuracy by 12% post-feedback, enhancing decision quality and responsiveness to in-game challenges.</li>
+								    <li><strong>Real-Time Performance</strong>: Achieved smooth operation with <1-second response time, maintaining real-time gameplay without perceptible lag.</li>
+								</ul>
+								</details>
+
+								<details>
+								  <summary>
+								  <h2 id="knowledgemoviepage_6">6. Conclusion & Future Improvements</h2>
+								  </summary>
+								<h3>Conclusion</h3>
+								<p style="margin-left: 10px; margin-bottom: 5px;"></p>
+								<p style="margin-left: 10px; margin-bottom: 5px;"></p>
+								<h3>Future Improvements</h3>
+								<p style="margin-left: 10px; margin-bottom: 5px;"><strong></strong></p>
+								<p style="margin-left: 10px; margin-bottom: 5px;"><strong></strong></p>
+								<p style="margin-left: 10px; margin-bottom: 5px;"><strong></strong></p>
 								</details>
 								
 
