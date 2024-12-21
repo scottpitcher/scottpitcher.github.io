@@ -478,74 +478,104 @@
 								  />
 								</span>
 								</div>
-								 <!-- Movie Recommendation Dropdowns -->
-								    <div id="movie-recommendation" style="text-align: center; margin-bottom: 30px;">
-								        <form id="movieForm">
-								            <label for="movie1">Movie 1:</label>
-								            <select id="movie1">
-								                <option value="">Select a movie</option>
-								            </select>
+								<!-- Movie Recommendation Dropdowns -->
+								<div id="movie-recommendation" style="text-align: center; margin-bottom: 30px;">
+								    <form id="movieForm">
+								        <label for="movie1">Movie 1:</label>
+								        <select id="movie1">
+								            <option value="">Select a movie</option>
+								        </select>
 								
-								            <label for="movie2">Movie 2:</label>
-								            <select id="movie2">
-								                <option value="">Select a movie</option>
-								            </select>
+								        <label for="movie2">Movie 2:</label>
+								        <select id="movie2">
+								            <option value="">Select a movie</option>
+								        </select>
 								
-								            <label for="movie3">Movie 3:</label>
-								            <select id="movie3">
-								                <option value="">Select a movie</option>
-								            </select>
+								        <label for="movie3">Movie 3:</label>
+								        <select id="movie3">
+								            <option value="">Select a movie</option>
+								        </select>
 								
-								            <br><br>
-								            <button type="submit">Get Recommendation</button>
-								        </form>
+								        <br><br>
+								        <button type="submit">Get Recommendation</button>
+								    </form>
 								
-								        <div id="result" style="margin-top: 10px;"></div>
+								    <div id="result" style="margin-top: 10px;"></div>
+								</div>
 								
-								        <script>
-								            // Fetch movie list from FastAPI backend and populate dropdowns
-								            fetch('https://your-fastapi-app-url/movies')  // Replace with your FastAPI URL
-								                .then(response => response.json())
-								                .then(data => {
-								                    const movies = data.movies;
-								                    const movieSelectElements = document.querySelectorAll('select');
+								<script>
+								    // Fetch movie data for dropdowns
+								    async function populateDropdowns() {
+								        try {
+								            const response = await fetch("/dropdown");
+								            const data = await response.json();
+								            const movieTitles = data.movies;
 								
-								                    movieSelectElements.forEach(selectElement => {
-								                        movies.forEach(movie => {
-								                            const option = document.createElement('option');
-								                            option.value = movie;
-								                            option.textContent = movie;
-								                            selectElement.appendChild(option);
-								                        });
-								                    });
-								                })
-								                .catch(error => console.error("Error fetching movies:", error));
+								            // Populate dropdowns with movie titles
+								            const movieSelectElements = [document.getElementById('movie1'), document.getElementById('movie2'), document.getElementById('movie3')];
 								
-								            // Handle form submission to get recommendation
-								            document.getElementById("movieForm").addEventListener("submit", function(e) {
-								                e.preventDefault();
+								            movieTitles.forEach(movie => {
+								                const option = document.createElement("option");
+								                option.value = movie.InputMovie_id;
+								                option.textContent = movie.InputMovie_title;
 								
-								                const selectedMovies = {
-								                    movie1: document.getElementById("movie1").value,
-								                    movie2: document.getElementById("movie2").value,
-								                    movie3: document.getElementById("movie3").value
-								                };
-								
-								                fetch('https://your-fastapi-app-url/recommend', {
-								                    method: 'POST',
-								                    headers: {
-								                        'Content-Type': 'application/json',
-								                    },
-								                    body: JSON.stringify(selectedMovies)
-								                })
-								                .then(response => response.json())
-								                .then(data => {
-								                    document.getElementById("result").textContent = `Recommended Match Score: ${data.match_score}`;
-								                })
-								                .catch(error => console.error("Error fetching recommendation:", error));
+								                movieSelectElements.forEach(select => {
+								                    select.appendChild(option.cloneNode(true));  // Add the same options to each dropdown
+								                });
 								            });
-								        </script>
-								    </div>
+								        } catch (error) {
+								            console.error("Error fetching movie data:", error);
+								        }
+								    }
+								
+								    // Handle form submission and fetch recommendation
+								    document.getElementById("movieForm").addEventListener("submit", async function (event) {
+								        event.preventDefault();
+								
+								        // Get selected movie IDs
+								        const selectedMovies = [
+								            document.getElementById('movie1').value,
+								            document.getElementById('movie2').value,
+								            document.getElementById('movie3').value
+								        ];
+								
+								        if (selectedMovies.some(id => id === "")) {
+								            document.getElementById('result').innerText = "Please select 1 to 3 movies.";
+								            return;
+								        }
+								
+								        try {
+								            // Send the selected movies to the /recommend endpoint
+								            const response = await fetch("/recommend", {
+								                method: "POST",
+								                headers: {
+								                    "Content-Type": "application/json"
+								                },
+								                body: JSON.stringify({ input_movie_ids: selectedMovies })
+								            });
+								
+								            const recommendation = await response.json();
+								
+								            // Display the result
+								            if (response.ok) {
+								                document.getElementById('result').innerHTML = `
+								                    <h3>Recommended Movie:</h3>
+								                    <p><strong>${recommendation.recommended_movie}</strong></p>
+								                    <p>Match Score: ${recommendation.match_score}</p>
+								                `;
+								            } else {
+								                document.getElementById('result').innerText = recommendation.detail || "An error occurred.";
+								            }
+								        } catch (error) {
+								            document.getElementById('result').innerText = "Error fetching recommendation.";
+								            console.error("Error submitting form:", error);
+								        }
+								    });
+								
+								    // Populate dropdowns when the page loads
+								    window.onload = populateDropdowns;
+								</script>
+	    </div>
 								<div style="text-align: center;"><p>Movie data knowledge graph in Neo4j! <br>(Blue:Year, Orange:Genre, Purple:Title, Red: Popularity)</p></div>
 								<h2>Project Summary</h2>
 								<p><p>
