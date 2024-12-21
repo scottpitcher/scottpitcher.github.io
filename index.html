@@ -505,28 +505,30 @@
 								
 								<script>
 								    // Fetch movie data for dropdowns
-								    async function populateDropdowns() {
-								        try {
-								            const response = await fetch("/dropdown");
-								            const data = await response.json();
-								            const movieTitles = data.movies;
+								  async function populateDropdowns() {
+								    try {
+								        const response = await fetch("http://127.0.0.1:8000/dropdown");
+								        const data = await response.json();
+								        console.log("Fetched movie data:", data);  // Add this line to log the fetched data
 								
-								            // Populate dropdowns with movie titles
-								            const movieSelectElements = [document.getElementById('movie1'), document.getElementById('movie2'), document.getElementById('movie3')];
+								        const movieTitles = data.movies;
 								
-								            movieTitles.forEach(movie => {
-								                const option = document.createElement("option");
-								                option.value = movie.InputMovie_id;
-								                option.textContent = movie.InputMovie_title;
+								        // Populate dropdowns with movie titles
+								        const movieSelectElements = [document.getElementById('movie1'), document.getElementById('movie2'), document.getElementById('movie3')];
 								
-								                movieSelectElements.forEach(select => {
-								                    select.appendChild(option.cloneNode(true));  // Add the same options to each dropdown
-								                });
+								        movieTitles.forEach(movie => {
+								            const option = document.createElement("option");
+								            option.value = movie.InputMovie_id;
+								            option.textContent = movie.InputMovie_title;
+								
+								            movieSelectElements.forEach(select => {
+								                select.appendChild(option.cloneNode(true));  // Add the same options to each dropdown
 								            });
-								        } catch (error) {
-								            console.error("Error fetching movie data:", error);
-								        }
+								        });
+								    } catch (error) {
+								        console.error("Error fetching movie data:", error);
 								    }
+								}
 								
 								    // Handle form submission and fetch recommendation
 								    document.getElementById("movieForm").addEventListener("submit", async function (event) {
