@@ -507,7 +507,7 @@
 								    // Fetch movie data for dropdowns
 								  async function populateDropdowns() {
 								    try {
-								        const response = await fetch("http://127.0.0.1:8000/dropdown");
+								        const response = await fetch("https://movie-recommendation-api-385067038431.us-central1.run.app/dropdown");
 								        const data = await response.json();
 								        console.log("Fetched movie data:", data);  // Add this line to log the fetched data
 								
@@ -548,7 +548,7 @@
 								
 								        try {
 								            // Send the selected movies to the /recommend endpoint
-								            const response = await fetch("http://127.0.0.1:8000/recommend", {
+								            const response = await fetch("https://movie-recommendation-api-385067038431.us-central1.run.app/recommend", {
 										    method: "POST",
 										    headers: {
 										        "Content-Type": "application/json"
