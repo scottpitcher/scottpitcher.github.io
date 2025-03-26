@@ -622,7 +622,42 @@
 								</span>
 								</div>
 								<!--Deployed model -->
-<!-- 	Populate with code to input model here						 -->
+									 <h1>Ask About the News</h1>
+									
+									  <input type="text" id="query" placeholder="Ask a question..." size="50" />
+									  <button onclick="submitQuery()">Search</button>
+									
+									  <div id="matches"></div>
+									  <div id="summary"></div>
+									
+									  <script>
+									    async function submitQuery() {
+									      const query = document.getElementById("query").value;
+									      const summaryDiv = document.getElementById("summary");
+									      const matchesDiv = document.getElementById("matches");
+									
+									      summaryDiv.textContent = "Loading...";
+									      matchesDiv.textContent = "";
+									
+									      try {
+									        const response = await fetch("http://localhost:8000/query", {
+									          method: "POST",
+									          headers: { "Content-Type": "application/json" },
+									          body: JSON.stringify({ query })
+									        });
+									
+									        const data = await response.json();
+									        summaryDiv.textContent = data.answer || "No summary found.";
+									
+									        if (data.matches && data.matches.length > 0) {
+									          matchesDiv.innerHTML = "<strong>Top Matches:</strong><br>" + data.matches.map(m => `<div>${m}</div>`).join("");
+									        }
+									      } catch (err) {
+									        summaryDiv.textContent = "Error: Could not reach the server.";
+									        console.error(err);
+									      }
+									    }
+									  </script>
 								<div style="text-align: center;"><p>Movie data knowledge graph in Neo4j! <br>(Blue:Year, Orange:Genre, Purple:Title, Red: Popularity)</p></div>
 								<h2>Project Summary</h2>
 								<p><p>
