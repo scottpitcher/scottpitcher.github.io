@@ -630,34 +630,52 @@
 									  <div id="matches"></div>
 									  <div id="summary"></div>
 									
-									  <script>
-									    async function submitQuery() {
-									      const query = document.getElementById("query").value;
-									      const summaryDiv = document.getElementById("summary");
-									      const matchesDiv = document.getElementById("matches");
-									
-									      summaryDiv.textContent = "Loading...";
-									      matchesDiv.textContent = "";
-									
-									      try {
-									        const response = await fetch("const response = await fetch("https://your-news-api.onrender.com/query", {", {
-									          method: "POST",
-									          headers: { "Content-Type": "application/json" },
-									          body: JSON.stringify({ query })
-									        });
-									
-									        const data = await response.json();
-									        summaryDiv.textContent = data.answer || "No summary found.";
-									
-									        if (data.matches && data.matches.length > 0) {
-									          matchesDiv.innerHTML = "<strong>Top Matches:</strong><br>" + data.matches.map(m => `<div>${m}</div>`).join("");
-									        }
-									      } catch (err) {
-									        summaryDiv.textContent = "Error: Could not reach the server.";
-									        console.error(err);
-									      }
-									    }
-									  </script>
+									 <script>
+  async function submitQuery() {
+    const query = document.getElementById("query").value;
+    const statusDiv = document.getElementById("status");
+    const summaryDiv = document.getElementById("summary");
+    const matchesDiv = document.getElementById("matches");
+
+    // Clear previous results
+    statusDiv.innerText = "⏳ Sending your query...";
+    summaryDiv.innerHTML = "";
+    matchesDiv.innerHTML = "";
+
+    try {
+      const response = await fetch("https://personalised-news-summariser-rag-llm.onrender.com/query", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query })
+      });
+
+      if (!response.ok) {
+        statusDiv.innerText = `❌ Error: ${response.status} ${response.statusText}`;
+        return;
+      }
+
+      const data = await response.json();
+
+      if (!data.answer) {
+        statusDiv.innerText = "⚠️ No summary returned. Try a different query?";
+        return;
+      }
+
+      statusDiv.innerText = "✅ Results loaded!";
+      summaryDiv.innerHTML = `<h3>Summary:</h3><p>${data.answer}</p>`;
+
+      if (data.matches && data.matches.length > 0) {
+        matchesDiv.innerHTML = "<h4>Top Matches:</h4>" + data.matches.map(m => `<p>${m}</p>`).join("");
+      } else {
+        matchesDiv.innerText = "⚠️ No article matches found.";
+      }
+
+    } catch (error) {
+      statusDiv.innerText = "🚨 Network error. Check the API or internet connection.";
+      console.error("Fetch failed:", error);
+    }
+  }
+</script>
 								<div style="text-align: center;"><p>Movie data knowledge graph in Neo4j! <br>(Blue:Year, Orange:Genre, Purple:Title, Red: Popularity)</p></div>
 								<h2>Project Summary</h2>
 								<p><p>
