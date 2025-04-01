@@ -656,13 +656,13 @@
 
       const data = await response.json();
 
-      if (!data.answer) {
+      if (!data.summary) {
         statusDiv.innerText = "⚠️ No summary returned. Try a different query?";
         return;
       }
 
       statusDiv.innerText = "✅ Results loaded!";
-      summaryDiv.innerHTML = `<h3>Summary:</h3><p>${data.answer}</p>`;
+      summaryDiv.innerHTML = `<h3>Summary:</h3><p>${data.summary}</p>`;
 
       if (data.matches && data.matches.length > 0) {
         matchesDiv.innerHTML = "<h4>Top Matches:</h4>" + data.matches.map(m => `<p>${m}</p>`).join("");
