@@ -1683,16 +1683,20 @@ details summary::-webkit-details-marker {
   display: none;
 }
 
-details summary::after {
+.summary-heading::after,
+.summary-heading-sub::after {
   content: '▸';
   font-size: 1em;
   display: inline-block;
+  margin-left: 6px;
   transition: transform 0.2s ease;
 }
 
-details[open] summary::after {
+details[open] .summary-heading::after,
+details[open] .summary-heading-sub::after {
   transform: rotate(90deg);
 }
+
 
 /* Footer */
 
