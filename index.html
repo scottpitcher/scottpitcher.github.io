@@ -612,14 +612,14 @@
 							<article id="newsretrievalpage">
 								<h1 class="major">--Personalized Daily News Summarizer </h1>
 								<div style="text-align: center;">
-								<span>
+<!-- 								<span>
 								  <img 
 								    style="width: 100%; max-width: 500px; height: 420px; object-fit: contain;" 
 								    class="project-image" 
 								    src="images/projects/knowldgegraphmovierec/graph.png" 
 								    alt="Knowledge Graph Movie Recommendation Visualization" 
 								  />
-								</span>
+								</span> -->
 								</div>
 								<!--Deployed model -->
 									 <h1>Ask About the News</h1>
@@ -676,7 +676,8 @@
     }
   }
 </script>
-								<div style="text-align: center;"><p>Movie data knowledge graph in Neo4j! <br>(Blue:Year, Orange:Genre, Purple:Title, Red: Popularity)</p></div>
+
+								
 								<h2>Project Summary</h2>
 								<p><p>
 								<p>Check out the GitHub repository <a href="https://github.com/scottpitcher/personalised_news_summariser_rag_llm">here!</a></p>
@@ -693,6 +694,27 @@
 								<p style="margin-bottom: 5px;"><a href="#newsretrievalpage_5"> 5. Results </a></p>
 								<p style="margin-bottom: 5px;"><a href="#newsretrievalpage_6"> 6. Conclusion & Future Improvements </a></p>
 								<hr width="100%" size="2">
+								
+								<details>
+								  <summary>
+								    <h2 id="newsretrievalpage_1">1. Introduction & Technical Stack</h2>
+								  </summary>
+								  <p style="margin-bottom: 15px;">
+									I set out to create a system that helps users reduce the time needed to find answers about current events.
+									With information overload being a common challenge, I developed this app to allow users to ask direct questions and receive transparent, concise answers.
+									The system leverages the NewsAPI to regularly scrape current news, maintaining an up-to-date vector store of information. I implemented Retrieval-Augmented Generation (RAG) to efficiently access relevant content, and incorporated Reinforcement Learning to collect user feedback on tone and style — allowing the QA bot to adapt to individual conversation habits and feel more natural.								  </p>
+								  <h3>Technical Stack</h3>
+								| Component      | Tool                                      |
+								|----------------|-------------------------------------------|
+								| Language       | Python                                    |
+								| Retrieval      | FAISS / ChromaDB                          |
+								| Embeddings     | sentence-transformers / OpenAI Embeddings |
+								| LLMs           | OpenAI GPT-4 / HuggingFace models         |
+								| Summarization  | LangChain / Custom Prompt Templates       |
+								| UI (Optional)  | Streamlit or Flask                        |
+								| Data Storage   | JSON / SQLite / CSV                       |
+								</details>
+								
 			</article>
 						<!-- Tampa GPT Project -->
 							<article id="tampapage">
