@@ -1694,6 +1694,18 @@ details summary p::after {
 }
 details[open] summary p::after {
   transform: rotate(90deg); /* Down arrow when open */
+
+}
+
+details summary.subsection-label::after {
+  content: '▸';
+  font-size: 1em;
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform 0.2s ease;
+}
+details[open] summary.subsection-label::after {
+  transform: rotate(90deg);
 }
 
 
