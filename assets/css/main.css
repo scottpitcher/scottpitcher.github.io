@@ -1670,6 +1670,7 @@ input, select, textarea {
     text-align: left;         /* Left-aligns text within the code block */
 }
 
+
 details summary {
   display: inline-block;
   cursor: pointer;
@@ -1697,14 +1698,34 @@ details[open] summary p::after {
 
 }
 
-details summary.subsection-label::after {
+/* Subsection layout */
+.subsection-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* Custom arrow BEFORE the text */
+.subsection-wrapper > summary.subsection-label::before {
   content: '▸';
-  font-size: 1em;
   display: inline-block;
-  margin-left: 5px;
+  font-size: 1em;
   transition: transform 0.2s ease;
 }
-details[open] summary.subsection-label::after {
+
+/* Rotate arrow only when subsection is opened */
+.subsection-wrapper[open] > summary.subsection-label::before {
+  transform: rotate(90deg);
+}
+
+details > summary.subsection-label::after {
+  content: '▸';
+  font-size: 1em;
+  transition: transform 0.2s ease;
+}
+
+details[open] > summary.subsection-label::after {
   transform: rotate(90deg);
 }
 
@@ -1718,7 +1739,6 @@ details summary {
 details summary::-webkit-details-marker {
   display: none;         /* Hides the default arrow in Safari */
 }
-
 /* Footer */
 
 	#footer {
