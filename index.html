@@ -685,9 +685,8 @@
 								<p style="margin-bottom: 5px;"><a href="#newsretrievalpage_1"> 1. Introduction & Technical Stack</a></p>
 								<p style="margin-bottom: 5px;"><a href="#newsretrievalpage_2"> 2. Project Structure </a></p>
 								<p style="margin-bottom: 5px;"><a href="#newsretrievalpage_3"> 3. Samples of Code </a></p>
-								<p style="margin-bottom: 5px;"><a href="#newsretrievalpage_4"> 4. Roadblocks and Solutions </a></p>
+								<p style="margin-bottom: 5px;"><a href="#newsretrievalpage_4"> 4. Roadblocks, Solutions, and Improvements </a></p>
 								<p style="margin-bottom: 5px;"><a href="#newsretrievalpage_5"> 5. Example Outputs </a></p>
-								<p style="margin-bottom: 5px;"><a href="#newsretrievalpage_6"> 6. Future Improvements </a></p>
 								<hr width="100%" size="2">
 								
 								<details>
@@ -1110,9 +1109,37 @@ if __name__ == "__main__":
 								
 								<details>
 								  <summary>
-								    <h2 id="newsretrievalpage_4">4. Roadblocks and Solutions</h2>
+								    <h2 id="newsretrievalpage_4">4. Roadblocks, Solutions, and Improvements</h2>
 								  </summary>
-								  <p style="margin-bottom: 15px;"></p>
+								  <table>
+									  <thead>
+									    <tr>
+									      <th>Roadblock</th>
+									      <th>Solution</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									    <tr>
+									      <td>No inherent 'politics' category in NewsAPI</td>
+									      <td>Created custom category using keyword search via the everything endpoint</td>
+									    </tr>
+									    <tr>
+									      <td>LLM Output irrelevant to user query</td>
+									      <td>Retrieved articles via semantic similarity (FAISS), applied a similarity threshold, and returned a fallback "unsure" answer if no context was strong enough</td>
+									    </tr>
+									    <tr>
+									      <td>Bias transparency</td>
+									      <td><strong>Potential addition(s)</strong>: Keep database of sources with bias scores, train new agent to scan for bias and generate score.</td>
+									    </tr>
+									    <tr>
+									      <td>Dated articles</td>
+									      <td><strong>Potential addition(s)</strong>: Implement system to weight articles via date, or omit after certain timeframe.</td>
+									    </tr>
+									  </tbody>
+									</table>
+									
+								<p style="font-size: 0.8em;"><i>*Note: all <strong>potential additions</strong> have not been added yet, and are stated to address gaps in project application.</i></p>
+
 								</details>
 
 								
@@ -1124,12 +1151,6 @@ if __name__ == "__main__":
 								</details>
 
 								
-								<details>
-								  <summary>
-								    <h2 id="newsretrievalpage_6">6. Future Improvements</h2>
-								  </summary>
-								  <p style="margin-bottom: 15px;"></p>
-								</details>
 			</article>
 						<!-- Tampa GPT Project -->
 							<article id="tampapage">
