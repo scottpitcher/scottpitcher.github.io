@@ -1153,12 +1153,14 @@ if __name__ == "__main__":
 								<h1 class="major">Siamese Facial Recognition Network </h1>
 								<div style="text-align: center;">
 								<span>
-								  <img 
-								    style="width: 100%; max-width: 500px; height: 420px; object-fit: contain;" 
-								    class="project-image" 
-								    src="images/news_summarizer_image.png" 
-								    alt="News Summariser Image" 
-								  />
+								 <video
+								  style="width: 100%; max-width: 500px; height: 420px; object-fit: contain;"
+								  class="project-video"
+								  controls
+								>
+								  <source src="images/siamese_demo.mov" type="video/quicktime">
+								  Your browser doesn’t support embedded videos.
+								</video>
 								</span>
 								</div>
 								
@@ -1173,10 +1175,13 @@ if __name__ == "__main__":
 								<details>
 								  <summary>
 								    <h2 id="siamesenetworkpage_1">1. Introduction & Technical Stack</h2>
+									  
 								  </summary>
 								  <p style="margin-bottom: 15px;">
+									  This project is a robust face‐matching system that leverages a Siamese CNN and OpenCV/MediaPipe preprocessing to verify identities by comparing face embeddings. It isolates the face region to eliminate background bias and achieves high accuracy even in previously unseen environments.
+								  </p>
 									  
-<!-- 							<table>
+							<table>
 							  <thead>
 							    <tr>
 							      <th>Component</th>
@@ -1184,15 +1189,16 @@ if __name__ == "__main__":
 							    </tr>
 							  </thead>
 							  <tbody>
-							    <tr><td>Language</td><td>Python</td></tr>
-							    <tr><td>Retrieval</td><td>FAISS </td></tr>
-							    <tr><td>Embeddings</td><td>sentence-transformers / OpenAI Embeddings</td></tr>
-							    <tr><td>LLMs</td><td>OpenAI GPT-4 models</td></tr>
-							    <tr><td>Summarization</td><td>LangChain / Custom Prompt Templates</td></tr>
-							    <tr><td>UI (Optional)</td><td>lask</td></tr>
-							    <tr><td>Data Storage</td><td>JSON / CSV</td></tr>
+								<tr><td>Language</td><td>Python</td></tr>
+								<tr><td>Framework</td><td>TensorFlow / Keras</td></tr>
+								<tr><td>Data Pipeline</td><td>tf.data API</td></tr>
+								<tr><td>Computer Vision</td><td>OpenCV (webcam capture)</td></tr>
+								<tr><td>Model</td><td>Custom Siamese CNN with L1-distance layer</td></tr>
+								<tr><td>Visualization</td><td>Matplotlib (saliency maps)</td></tr>
+								<tr><td>Data Storage</td><td>Local image files &amp; LFW dataset</td></tr>
+
 							  </tbody>
-							</table> -->
+							</table>
 								</details>
 	
 								<details>
