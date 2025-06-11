@@ -1296,12 +1296,40 @@ siamese_model.summary()
 								  <summary>
 								    <h2 id="#siamesenetworkpage_3"> 3. Roadblocks, Solutions, Improvements </h2>
 								  </summary>
+									
+									<table>
+									  <thead>
+									    <tr>
+									      <th>Roadblock</th>
+									      <th>Solution</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									<tr>
+									      <td>Inconsistent embedding focus</td>
+									      <td>Use Grad-CAM to verify and retrain network to concentrate on central facial landmarks</td>
+									    </tr>
+									<tr>
+									      <td>High false negatives when background changes	</td>
+									      <td>Crop and mask out the background; train with random background augmentation</td>
+									    </tr>
+									  </tbody>
+									</table>
+									
+								<p style="font-size: 0.8em;"><i>*Note: all <strong>potential additions</strong> have not been added yet, and are stated to address gaps in project application.</i></p>
+
 								</details>
 
 								<details>
 								  <summary>
 								    <h2 id="#siamesenetworkpage_4"> 4. Example Outputs </h2>
 								  </summary>
+									<h3>Example 1: Evaluating Cropped Face </h3>
+									<img src="https://raw.githubusercontent.com/scottpitcher/siamese_facial_recog_app/blob/main/images/cropped_face.png" alt="Example Query 1" style="max-width: 100%; height: auto;" />
+									
+									<h3>Example 2: Saliency Map</h3>
+									<img src="https://raw.githubusercontent.com/scottpitcher/siamese_facial_recog_app/blob/main/images/saliency_map.png" alt="Example Query 2" style="max-width: 100%; height: auto;" />
+									
 								</details>
 
 								
