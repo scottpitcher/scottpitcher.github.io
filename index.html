@@ -1205,6 +1205,91 @@ if __name__ == "__main__":
 								  <summary>
 								    <h2 id="#siamesenetworkpage_2"> 2. Samples of Code </h2>
 								  </summary>
+									
+								<details class="subsection-wrapper">
+										<summary class="subsection-label">
+											<span>Custom L1 Distance Function</span>
+										</summary>
+									 <pre class="code-block" style="max-height: 400px; overflow-y: scroll;"><code class="language-python"># Siamese L1 distance class
+class L1Dist(Layer):
+    def __init__(self, **kwargs):
+        super().__init__()
+    
+    # Distance calc
+    def call(self, input_embedding, validation_embedding):
+        return tf.math.abs(input_embedding - validation_embedding)
+
+										 
+									</code></pre>
+								</details>
+									
+								<details class="subsection-wrapper">
+										<summary class="subsection-label">
+											<span>TensorFlow Model Architecture</span>
+										</summary>
+									 <pre class="code-block" style="max-height: 400px; overflow-y: scroll;"><code class="language-python">def make_embedding():
+    inp = Input(shape=(100,100,3), name='embed_input')
+    
+    # ── BLOCK 1 ── capture large-ish patterns with a 7×7 kernel
+    c1 = Conv2D(32, (7,7), activation='relu', padding='same')(inp)   # 32 filters × 7×7
+    m1 = MaxPooling2D((2,2), padding='same')(c1)                    # downsample by 2
+    
+    # ── BLOCK 2 ── mid-range patterns with a 5×5 kernel
+    c2 = Conv2D(64, (5,5), activation='relu', padding='same')(m1)    # 64 filters × 5×5
+    m2 = MaxPooling2D((2,2), padding='same')(c2)                    # downsample by 2
+    
+    # ── BLOCK 3 ── finer details with a 3×3 kernel
+    c3 = Conv2D(128, (3,3), activation='relu', padding='same')(m2)   # 128 filters × 3×3
+    m3 = MaxPooling2D((2,2), padding='same')(c3)                    # downsample by 2
+    
+    # ── BLOCK 4 ── high-level cues with a 3×3 kernel
+    c4 = Conv2D(256, (3,3), activation='relu', padding='same')(m3)   # 256 filters × 3×3
+    
+    # ── EMBEDDING ── flatten to vector + dense
+    f1 = Flatten()(c4)                                              # shape ~ (13×13×256)=43264
+    d1 = Dense(4096, activation='sigmoid')(f1)                     # final 4096-D embedding
+    
+    return Model(inputs=inp, outputs=d1, name='embedding')
+										 
+									</code></pre>
+								</details>
+
+								<details class="subsection-wrapper">
+										<summary class="subsection-label">
+											<span>Siamese Model</span>
+										</summary>
+									 <pre class="code-block" style="max-height: 400px; overflow-y: scroll;"><code class="language-python"># implementation of the keras CNN embeddings
+
+def make_siamese_model():
+    # Anchor input
+    input_image = Input(name = 'anchor_img', shape = (100,100,3))
+    
+    # Validation input
+    validation_image = Input(name = 'validation_img', shape = (100,100,3))
+    
+    # Embed images
+    ## Embed anchor
+    input_embd = embedding(input_image)
+
+    ## Embed val
+    val_embd = embedding(validation_image)
+
+    # Run siamese distance
+    siamese_layer = L1Dist()
+    siamese_layer._name = "distance"
+    distances = siamese_layer(input_embd, val_embd)
+
+    # Classification Layer
+    classifier = Dense(1, activation = 'sigmoid')(distances)
+
+    return Model(inputs= [input_image, validation_image], outputs = classifier, name = 'SiameseNetwork')
+
+siamese_model = make_siamese_model()
+siamese_model.summary()
+										 
+									</code></pre>
+								</details>
+									
 								</details>
 
 								<details>
